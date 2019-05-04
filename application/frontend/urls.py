@@ -4,5 +4,5 @@ from django.conf.urls import url, include
 app_name = 'frontend'
 
 urlpatterns = [
-    url(r'^$', index, name='start'),
+    url(r'^$', index, name='index'),
 ]

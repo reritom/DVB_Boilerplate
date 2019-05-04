@@ -24,7 +24,7 @@ SECRET_KEY = 'r_6e$9^cr41#=6!3_(0ievhdf7dna(w%(uo!&vzipenp=)vtx9'
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000000
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if os.path.join(BASE_DIR, '.prd'):
+if '.prd' in os.listdir(BASE_DIR):
     ALLOWED_HOSTS = [
         '...'
     ]
@@ -34,9 +34,7 @@ if os.path.join(BASE_DIR, '.prd'):
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
 else:
-    ALLOWED_HOSTS = [
-        '...'
-    ]
+    ALLOWED_HOSTS = ['*']
     DEBUG = True
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -123,13 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
